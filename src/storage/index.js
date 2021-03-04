@@ -5,7 +5,7 @@ class Storage {
   constructor(options = {}) {
     this.cache = {};
 
-    this.localStorage = options.instance || getLocalStorage(options);
+    this.localStorage = options.customLocalStorage || getLocalStorage(options);
   }
 
   async set(key, value) {

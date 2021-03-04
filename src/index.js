@@ -56,7 +56,7 @@ const PRODUCTION_DC_LIST = [
 
 class MTProto {
   constructor(options) {
-    const { api_id, api_hash, storageOptions } = options;
+    const { api_id, api_hash, customLocalStorage } = options;
 
     this.api_id = api_id;
     this.api_hash = api_hash;
@@ -66,7 +66,7 @@ class MTProto {
     this.dcList = !!options.test ? TEST_DC_LIST : PRODUCTION_DC_LIST;
 
     this.rpcs = new Map();
-    this.storage = new Storage(storageOptions);
+    this.storage = new Storage(customLocalStorage);
     this.updates = new EventEmitter();
   }
 
