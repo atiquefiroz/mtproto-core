@@ -66,7 +66,7 @@ class MTProto {
     this.dcList = !!options.test ? TEST_DC_LIST : PRODUCTION_DC_LIST;
 
     this.rpcs = new Map();
-    this.storage = new Storage(customLocalStorage);
+    this.storage = new Storage({customLocalStorage});
     this.updates = new EventEmitter();
   }
 
